@@ -8,7 +8,7 @@
 ![code coverage badge](https://raw.githubusercontent.com/8ctopus/nano-ip/image-data/coverage.svg)
 ![lines of code](https://raw.githubusercontent.com/8ctopus/nano-ip/image-data/lines.svg)
 
-experimental ip utilities
+Experimental package to check if an IPv4 ip address is in a list of ranges.
 
 ## features
 
@@ -18,7 +18,7 @@ experimental ip utilities
 
 - `composer require 8ctopus/nano-ip`
 
-## simple example
+## example
 
 ```php
 use Oct8pus\NanoIP\CIDR;
