@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Oct8pus\NanoIP\CIDR;
+use Oct8pus\NanoIP\CIDRRange;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
