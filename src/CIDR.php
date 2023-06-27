@@ -47,17 +47,17 @@ class CIDR implements RangeInterface
     /**
      * Check if ip address is in range
      *
-     * @param int|IPv4|string $ip
+     * @param int|IPv4|string $address
      *
      * @return bool
      */
-    public function contains(string|int|IPv4 $ip) : bool
+    public function contains(string|int|IPv4 $address) : bool
     {
-        if (!$ip instanceof IPv4) {
-            $ip = new IPv4($ip);
+        if (!$address instanceof IPv4) {
+            $address = new IPv4($address);
         }
 
-        return $ip->long() >= $this->start->long() && $ip->long() <= $this->end->long();
+        return $address->long() >= $this->start->long() && $address->long() <= $this->end->long();
     }
 
     /**

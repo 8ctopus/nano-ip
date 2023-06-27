@@ -21,25 +21,25 @@ class Range implements RangeInterface
     /**
      * Check if ip address is in range
      *
-     * @param int|IPv4|string $ip
+     * @param int|IPv4|string $address
      *
      * @return bool
      */
-    public function contains(string|int|IPv4 $ip) : bool
+    public function contains(string|int|IPv4 $address) : bool
     {
-        if (!$ip instanceof IPv4) {
-            $ip = new IPv4($ip);
+        if (!$address instanceof IPv4) {
+            $address = new IPv4($address);
         }
 
         foreach ($this->list as $item) {
             if (CIDR::isCIDR($item)) {
                 $range = new CIDR($item);
 
-                if ($range->contains($ip)) {
+                if ($range->contains($address)) {
                     return true;
                 }
             } else {
-                if ($item === $ip->str()) {
+                if ($item === $address->str()) {
                     return true;
                 }
             }
