@@ -50,4 +50,12 @@ final class CIDRRangeTest extends TestCase
 
         new CIDRRange('127.0.0.1/a');
     }
+
+    public function testInvalidRange3() : void
+    {
+        self::expectException(IPException::class);
+        self::expectExceptionMessage('invalid range (3)');
+
+        new CIDRRange('127.0.0.1/41');
+    }
 }

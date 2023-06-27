@@ -32,7 +32,13 @@ class CIDRRange implements RangeInterface
             throw new IPException('invalid range (2)');
         }
 
-        $this->width = 2 ** (32 - (int) $cidr);
+        $cidr = (int) $cidr;
+
+        if ($cidr > 32) {
+            throw new IPException('invalid range (3)');
+        }
+
+        $this->width = 2 ** (32 - $cidr);
 
         $end = $this->start->long() | ($this->width - 1);
 
