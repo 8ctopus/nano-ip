@@ -41,6 +41,7 @@ class IPv4
             return $this->bytes;
         }
 
+        $bytes = [];
         $bytes[] = ($this->long >> 24) & 0xFF;
         $bytes[] = ($this->long >> 16) & 0xFF;
         $bytes[] = ($this->long >> 8) & 0xFF;
