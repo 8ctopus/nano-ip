@@ -6,7 +6,7 @@ use Oct8pus\NanoIP\CIDRRange;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$range = '192.168.100.0/22';
+$range = '139.87.112.0/31';
 
 $range = new CIDRRange($range);
 
