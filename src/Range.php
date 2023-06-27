@@ -53,7 +53,6 @@ class Range implements RangeInterface
 
                 default:
                     throw new IPException("unhandled type - {$type}");
-                    break;
             }
         }
 
