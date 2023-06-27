@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests;
 
 use Oct8pus\NanoIP\IPv4;
+use Oct8pus\NanoIP\IPException;
 use Oct8pus\NanoIP\Range;
 use PHPUnit\Framework\TestCase;
 
@@ -35,5 +36,18 @@ final class RangeTest extends TestCase
         self::assertTrue($range->contains('192.168.103.0'));
         self::assertTrue($range->contains('192.168.103.255'));
         self::assertFalse($range->contains('192.168.104.0'));
+    }
+
+    public function testUnhandledType() : void
+    {
+        $range = new Range([
+            '192.168.100.0-22',
+            '127.0.0.1',
+        ]);
+
+        self::expectException(IPException::class);
+        self::expectExceptionMessage('unhandled type - range');
+
+        $range->contains('127.0.0.1');
     }
 }

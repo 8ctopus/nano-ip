@@ -59,16 +59,4 @@ class CIDR implements RangeInterface
 
         return $address->long() >= $this->start->long() && $address->long() <= $this->end->long();
     }
-
-    /**
-     * Check if is CIDR range
-     *
-     * @param string $range
-     *
-     * @return bool
-     */
-    public static function isCIDR(string $range) : bool
-    {
-        return str_contains($range, '/');
-    }
 }

@@ -19,8 +19,6 @@ final class CIDRTest extends TestCase
     {
         $range = '192.168.100.0/22';
 
-        self::assertTrue(CIDR::isCIDR($range));
-
         $range = new CIDR($range);
 
         self::assertSame('192.168.100.0/22 range contains 1024 addresses 192.168.100.0 - 192.168.103.255', (string) $range);
