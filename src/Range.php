@@ -43,7 +43,7 @@ class Range implements RangeInterface
                     break;
 
                 case 'cidr':
-                    $range = new CIDR($item);
+                    $range = new CIDRRange($item);
 
                     if ($range->contains($address)) {
                         return true;

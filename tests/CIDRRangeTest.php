@@ -4,22 +4,22 @@ declare(strict_types=1);
 
 namespace Tests;
 
-use Oct8pus\NanoIP\CIDR;
+use Oct8pus\NanoIP\CIDRRange;
 use Oct8pus\NanoIP\IPException;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @internal
  *
- * @covers \Oct8pus\NanoIP\CIDR
+ * @covers \Oct8pus\NanoIP\CIDRRange
  */
-final class CIDRTest extends TestCase
+final class CIDRRangeTest extends TestCase
 {
     public function test() : void
     {
         $range = '192.168.100.0/22';
 
-        $range = new CIDR($range);
+        $range = new CIDRRange($range);
 
         self::assertSame('192.168.100.0/22 range contains 1024 addresses 192.168.100.0 - 192.168.103.255', (string) $range);
 
@@ -40,7 +40,7 @@ final class CIDRTest extends TestCase
     {
         self::expectException(IPException::class);
         self::expectExceptionMessage('invalid range');
-        new CIDR('127.0.0.1');
+        new CIDRRange('127.0.0.1');
     }
 
     public function testInvalidRange2() : void
@@ -48,6 +48,6 @@ final class CIDRTest extends TestCase
         self::expectException(IPException::class);
         self::expectExceptionMessage('invalid range (2)');
 
-        new CIDR('127.0.0.1/a');
+        new CIDRRange('127.0.0.1/a');
     }
 }

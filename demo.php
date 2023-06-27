@@ -8,7 +8,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $range = '192.168.100.0/22';
 
-$range = new CIDR($range);
+$range = new CIDRRange($range);
 
 echo $range;
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Oct8pus\NanoIP;
 
-class CIDR implements RangeInterface
+class CIDRRange implements RangeInterface
 {
     private readonly string $range;
     private readonly IPv4 $start;
