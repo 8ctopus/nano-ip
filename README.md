@@ -37,6 +37,7 @@ echo $range;
 ```
 
 Test [CIDR ranges](https://ipinfo.io/tools/cidr-to-ip-range-converter) online
+[Understand CIDR notation](https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking)
 
 ## run tests
 
