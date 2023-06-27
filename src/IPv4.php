@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Oct8pus\NanoIP;
 
-use Oct8pus\NanoIP\IPException;
-
 class IPv4
 {
     private readonly string $str;
@@ -25,6 +23,11 @@ class IPv4
                 $this->long = $address;
                 break;
         }
+    }
+
+    public function __toString() : string
+    {
+        return sprintf('%s', $this->str);
     }
 
     public function long() : int
@@ -57,11 +60,6 @@ class IPv4
     {
         $bytes = $this->bytes();
 
-        return sprintf("%08b.%08b.%08b.%08b", $bytes[0], $bytes[1], $bytes[2], $bytes[3]);
-    }
-
-    public function __toString() : string
-    {
-        return sprintf("%s", $this->str);
+        return sprintf('%08b.%08b.%08b.%08b', $bytes[0], $bytes[1], $bytes[2], $bytes[3]);
     }
 }

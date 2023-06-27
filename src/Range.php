@@ -21,7 +21,7 @@ class Range implements RangeInterface
     /**
      * Check if ip address is in range
      *
-     * @param  string|int|IPv4    $ip
+     * @param int|IPv4|string $ip
      *
      * @return bool
      */

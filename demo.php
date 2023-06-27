@@ -20,8 +20,8 @@ $ips = [
 
 foreach ($ips as $ip) {
     if ($range->contains($ip)) {
-        echo "$ip is in range\n";
+        echo "{$ip} is in range\n";
     } else {
-        echo "$ip is not in range\n";
+        echo "{$ip} is not in range\n";
     }
 }

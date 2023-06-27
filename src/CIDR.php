@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Oct8pus\NanoIP;
 
-use Oct8pus\NanoIP\IPException;
-
 class CIDR implements RangeInterface
 {
     private readonly string $range;
@@ -41,10 +39,15 @@ class CIDR implements RangeInterface
         $this->end = new IPv4($end);
     }
 
+    public function __toString()
+    {
+        return sprintf('%s range contains %d addresses %s - %s', $this->range, $this->width, $this->start, $this->end);
+    }
+
     /**
      * Check if ip address is in range
      *
-     * @param  string|int|IPv4    $ip
+     * @param int|IPv4|string $ip
      *
      * @return bool
      */
@@ -60,17 +63,12 @@ class CIDR implements RangeInterface
     /**
      * Check if is CIDR range
      *
-     * @param  string $range
+     * @param string $range
      *
      * @return bool
      */
     public static function isCIDR(string $range) : bool
     {
         return str_contains($range, '/');
-    }
-
-    public function __toString()
-    {
-        return sprintf("%s range contains %d addresses %s - %s", $this->range, $this->width, $this->start, $this->end);
     }
 }
