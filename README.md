@@ -36,6 +36,8 @@ echo $range;
 192.168.100.0/22 range contains 1024 addresses 192.168.100.0 - 192.168.103.255
 ```
 
+Test [CIDR ranges](https://ipinfo.io/tools/cidr-to-ip-range-converter) online
+
 ## run tests
 
     composer test
