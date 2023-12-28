@@ -6,6 +6,4 @@ namespace Oct8pus\NanoIP;
 
 use Exception;
 
-class IPException extends Exception
-{
-}
+class IPException extends Exception {}

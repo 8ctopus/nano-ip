@@ -10,7 +10,7 @@ class IPv4
     private readonly int $long;
     private readonly array $bytes;
 
-    public function __construct(string|int $address)
+    public function __construct(int|string $address)
     {
         switch (gettype($address)) {
             case 'string':

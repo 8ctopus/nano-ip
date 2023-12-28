@@ -6,5 +6,5 @@ namespace Oct8pus\NanoIP;
 
 interface RangeInterface
 {
-    public function contains(string|int|IPv4 $address) : bool;
+    public function contains(int|IPv4|string $address) : bool;
 }

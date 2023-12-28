@@ -25,7 +25,7 @@ class Range implements RangeInterface
      *
      * @return bool
      */
-    public function contains(string|int|IPv4 $address) : bool
+    public function contains(int|IPv4|string $address) : bool
     {
         if (!$address instanceof IPv4) {
             $address = new IPv4($address);
@@ -62,7 +62,7 @@ class Range implements RangeInterface
     /**
      * Get ip address type
      *
-     * @param  string $str
+     * @param string $str
      *
      * @return string
      */
@@ -70,9 +70,13 @@ class Range implements RangeInterface
     {
         if (str_contains($str, '/')) {
             return 'cidr';
-        } elseif (str_contains($str, '-')) {
+        }
+
+        if (str_contains($str, '-')) {
             return 'range';
-        } elseif (str_contains($str, '*')) {
+        }
+
+        if (str_contains($str, '*')) {
             return 'wildcard';
         } else {
             return 'ipv4';

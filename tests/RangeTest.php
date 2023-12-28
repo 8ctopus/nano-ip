@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests;
 
-use Oct8pus\NanoIP\IPv4;
 use Oct8pus\NanoIP\IPException;
+use Oct8pus\NanoIP\IPv4;
 use Oct8pus\NanoIP\Range;
 use PHPUnit\Framework\TestCase;
 
