@@ -19,7 +19,6 @@ final class IPv4Test extends TestCase
         $ip = new IPv4('127.0.0.1');
         self::assertSame(0x7F000001, $ip->long());
         self::assertSame([127, 0, 0, 1], $ip->bytes());
-        self::assertSame([127, 0, 0, 1], $ip->bytes());
 
         $ip = new IPv4(0x7F000001);
         self::assertSame('127.0.0.1', $ip->str());
