@@ -39,6 +39,7 @@ echo $range;
 Test [CIDR ranges](https://ipinfo.io/tools/cidr-to-ip-range-converter) online
 [Understand CIDR notation](https://michelburnett27.medium.com/understanding-cidr-notation-and-ip-address-range-3ad28194bc8d)
 [More info](https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking)
+[IP v6](https://www.cidr.eu/en/ipv6)
 
 ## run tests
 
