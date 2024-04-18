@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Oct8pus\NanoIP;
 
-class IPv4
+class IPv4 implements IPInterface
 {
     private readonly string $str;
-    private readonly int $long;
     private readonly array $bytes;
+    private readonly int $long;
 
     /**
      * Constructor
@@ -32,7 +32,7 @@ class IPv4
 
     public function __toString() : string
     {
-        return sprintf('%s', $this->str);
+        return $this->str;
     }
 
     public function long() : int

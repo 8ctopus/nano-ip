@@ -25,7 +25,7 @@ class Range implements RangeInterface
      *
      * @return bool
      */
-    public function contains(int|IPv4|string $address) : bool
+    public function contains(int|IPv4|IPv6|string $address) : bool
     {
         if (!$address instanceof IPv4) {
             $address = new IPv4($address);
