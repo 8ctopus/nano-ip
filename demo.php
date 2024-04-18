@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Also check
- */
-
 declare(strict_types=1);
 
 use Oct8pus\NanoIP\CIDRRange;
