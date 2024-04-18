@@ -30,6 +30,11 @@ class IPv4 implements IPInterface
         }
     }
 
+    public function str() : string
+    {
+        return $this->str;
+    }
+
     public function __toString() : string
     {
         return $this->str;
@@ -55,11 +60,6 @@ class IPv4 implements IPInterface
         $this->bytes = $bytes;
 
         return $bytes;
-    }
-
-    public function str() : string
-    {
-        return $this->str;
     }
 
     public function binary() : string

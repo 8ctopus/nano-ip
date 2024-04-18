@@ -19,6 +19,11 @@ class IPv6 implements IPInterface
         $this->str = $address;
     }
 
+    public function str() : string
+    {
+        return $this->str;
+    }
+
     public function __toString() : string
     {
         return $this->str;
@@ -43,11 +48,6 @@ class IPv6 implements IPInterface
         $this->bytes = $bytes;
 
         return $bytes;
-    }
-
-    public function str() : string
-    {
-        return $this->str;
     }
 
     public function binary() : string
