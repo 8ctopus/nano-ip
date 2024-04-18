@@ -78,8 +78,12 @@ class Range implements RangeInterface
 
         if (str_contains($str, '*')) {
             return 'wildcard';
-        } else {
-            return 'ipv4';
         }
+
+        if (str_contains($str, ':')) {
+            return 'ipv6';
+        }
+
+        return 'ipv4';
     }
 }

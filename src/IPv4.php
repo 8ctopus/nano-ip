@@ -10,6 +10,11 @@ class IPv4
     private readonly int $long;
     private readonly array $bytes;
 
+    /**
+     * Constructor
+     *
+     * @param int|string $address
+     */
     public function __construct(int|string $address)
     {
         switch (gettype($address)) {
