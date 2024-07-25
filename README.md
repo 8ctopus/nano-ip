@@ -1,9 +1,9 @@
 # nano ip
 
-[![packagist](http://poser.pugx.org/8ctopus/nano-ip/v)](https://packagist.org/packages/8ctopus/nano-ip)
-[![downloads](http://poser.pugx.org/8ctopus/nano-ip/downloads)](https://packagist.org/packages/8ctopus/nano-ip)
-[![min php version](http://poser.pugx.org/8ctopus/nano-ip/require/php)](https://packagist.org/packages/8ctopus/nano-ip)
-[![license](http://poser.pugx.org/8ctopus/nano-ip/license)](https://packagist.org/packages/8ctopus/nano-ip)
+[![packagist](https://poser.pugx.org/8ctopus/nano-ip/v)](https://packagist.org/packages/8ctopus/nano-ip)
+[![downloads](https://poser.pugx.org/8ctopus/nano-ip/downloads)](https://packagist.org/packages/8ctopus/nano-ip)
+[![min php version](https://poser.pugx.org/8ctopus/nano-ip/require/php)](https://packagist.org/packages/8ctopus/nano-ip)
+[![license](https://poser.pugx.org/8ctopus/nano-ip/license)](https://packagist.org/packages/8ctopus/nano-ip)
 [![tests](https://github.com/8ctopus/nano-ip/actions/workflows/tests.yml/badge.svg)](https://github.com/8ctopus/nano-ip/actions/workflows/tests.yml)
 ![code coverage badge](https://raw.githubusercontent.com/8ctopus/nano-ip/image-data/coverage.svg)
 ![lines of code](https://raw.githubusercontent.com/8ctopus/nano-ip/image-data/lines.svg)
