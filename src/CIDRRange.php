@@ -53,16 +53,80 @@ class CIDRRange implements RangeInterface
     /**
      * Check if ip address is in range
      *
-     * @param int|IPv4|string $address
+     * @param IPv4|IPv6|string|int $address
      *
      * @return bool
      */
-    public function contains(int|IPv4|string $address) : bool
+    public function contains(IPv4|IPv6|string|int $address) : bool
     {
-        if (!$address instanceof IPv4) {
-            $address = new IPv4($address);
+        $type = gettype($address);
+
+        switch ($type) {
+            case 'integer':
+                $address = new IPv4($address);
+                break;
+
+            case 'string':
+                $type = $this->getType($address);
+
+                switch ($type) {
+                    case 'ipv4':
+                        $address = new IPv4($address);
+                        break;
+
+                    case 'ipv6':
+                        $address = new IPv6($address);
+                        break;
+
+                    default:
+                        throw new IPException("unhandled type - {$type}");
+                }
+
+                break;
+
+            case 'object':
+                break;
+
+            default:
+                throw new IPException("unhandled type - {$type}");
         }
 
-        return $address->long() >= $this->start->long() && $address->long() <= $this->end->long();
+        if ($address instanceof IPv4) {
+            return $address->long() >= $this->start->long() && $address->long() <= $this->end->long();
+        }
+
+        if ($address instanceof IPv6) {
+            throw new IPException('not implemented');
+            //return $address->str() >= $this->start->long() && $address->long() <= $this->end->long();
+        }
+    }
+
+    /**
+     * Get ip address type
+     *
+     * @param string $str
+     *
+     * @return string
+     */
+    private function getType(string $str) : string
+    {
+        if (str_contains($str, '/')) {
+            return 'cidr';
+        }
+
+        if (str_contains($str, '-')) {
+            return 'range';
+        }
+
+        if (str_contains($str, '*')) {
+            return 'wildcard';
+        }
+
+        if (str_contains($str, ':')) {
+            return 'ipv6';
+        }
+
+        return 'ipv4';
     }
 }
+

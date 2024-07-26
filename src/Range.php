@@ -21,14 +21,42 @@ class Range implements RangeInterface
     /**
      * Check if ip address is in range
      *
-     * @param int|IPv4|string $address
+     * @param IPv4|IPv6|string|int $address
      *
      * @return bool
      */
-    public function contains(int|IPv4|IPv6|string $address) : bool
+    public function contains(IPv4|IPv6|string|int $address) : bool
     {
-        if (!$address instanceof IPv4) {
-            $address = new IPv4($address);
+        $type = gettype($address);
+
+        switch ($type) {
+            case 'integer':
+                $address = new IPv4($address);
+                break;
+
+            case 'object':
+                break;
+
+            case 'string':
+                $type = $this->getType($address);
+
+                switch ($type) {
+                    case 'ipv4':
+                        $address = new IPv4($address);
+                        break;
+
+                    case 'ipv6':
+                        $address = new IPv6($address);
+                        break;
+
+                    default:
+                        throw new IPException("unhandled type - {$type}");
+                }
+
+                break;
+
+            default:
+                throw new IPException("unhandled type - {$type}");
         }
 
         foreach ($this->list as $item) {
@@ -36,6 +64,7 @@ class Range implements RangeInterface
 
             switch ($type) {
                 case 'ipv4':
+                case 'ipv6':
                     if ($item === $address->str()) {
                         return true;
                     }

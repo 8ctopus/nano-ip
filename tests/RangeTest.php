@@ -21,6 +21,7 @@ final class RangeTest extends TestCase
         $range = new Range([
             '127.0.0.1',
             '192.168.100.0/22',
+            '2001:0DB8:7654:0010:FEDC:0000:0000:3210'
         ]);
 
         self::assertTrue($range->contains('127.0.0.1'));
@@ -35,6 +36,7 @@ final class RangeTest extends TestCase
         self::assertTrue($range->contains('192.168.102.255'));
         self::assertTrue($range->contains('192.168.103.0'));
         self::assertTrue($range->contains('192.168.103.255'));
+        // FIX ME self::assertTrue($range->contains('2001:0DB8:7654:0010:FEDC:0000:0000:3210'));
         self::assertFalse($range->contains('192.168.104.0'));
     }
 
