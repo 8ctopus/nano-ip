@@ -53,3 +53,4 @@ final class RangeTest extends TestCase
         $range->contains('127.0.0.1');
     }
 }
+
